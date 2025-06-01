@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+            rel="stylesheet">
+        <link rel="icon" href="viper.ico">
+        <meta name="description"
+            content="Portfolio of Harsh Vardhan Singh, an aspiring ethical hacker and cybersecurity enthusiast.">
+        <meta name="author" content="Harsh Vardhan Singh">
+        <meta name="keywords"
+            content="Cybersecurity, Ethical Hacking, Harsh Vardhan Singh, Portfolio, Bug Bounty, Pentesting">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Harsh Vardhan Singh - Portfolio</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-section {
+            margin-bottom: 50px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px; /* Increased space between icon and text */
+            padding: 16px 28px; /* Increased padding for more breathing room */
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
+            
+            
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 1);
+        }
+        .social-link.discord:hover {
+            background: rgba(114, 137, 218, 0.3);
+            border-color: #7289da;
+        }
+
+        .social-link.tryhackme:hover {
+            background: rgba(212, 45, 46, 0.3);
+            border-color: #d42d2e;
+        }
+
+        .social-link.medium:hover {
+            background: rgba(0, 0, 0, 0.3);
+            border-color: #000;
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            border-color: #e1306c;
+        }
+
+        .social-link.twitter:hover {
+            background: rgba(0, 0, 0, 0.3);
+            border-color: #000;
+        }
+
+        .social-link.linkedin:hover {
+            background: rgba(0, 119, 181, 0.3);
+            border-color: #0077b5;
+        }
+
+        .social-link.github:hover {
+            background: rgba(36, 41, 47, 0.3);
+            border-color: #24292f;
+        }
+        
+        .social-link i {
+            font-size: 20px; /* Fixed size for all icons */
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            fill: currentColor;
+        }
+
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 70%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+ /* Responsive design */
+        @media (max-width: 768px) {
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-link {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-card {
+                padding: 40px 20px;
+                margin: 20px;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .social-links {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .social-link {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .edit-prompt {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            z-index: 1000;
+        }
+    @media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1e1e2f 0%, #121222 100%);
+        color: #eee;
+    }
+
+    .portfolio-card {
+        background: rgba(30, 30, 50, 0.95);
+        color: #ddd;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .title, .bio {
+        color: #bbb;
+    }
+
+    .social-link {
+        background: rgba(255, 255, 255, 0.1);
+        color: #eee;
+    }
+
+    .social-link:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: #667eea;
+    }
+
+    .edit-prompt {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    .shape {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
+    </style>
+    </head>
+    <body>
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+
+        <div class="container">
+            <div class="portfolio-card">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img src="1.jpg"
+                            alt="Harsh Vardhan Singh Profile Picture">
+                    </div>
+                    <h1 class="name">Harsh Vardhan Singh</h1>
+                    <p class="title">Aspiring Ethical Hacker & Cybersecurity
+                        Enthusiast</p>
+                    <p class="bio">
+                        🔒 Aspiring Cybersecurity Professional | BTech Computer
+                        Science Student at UPES<br><br>
+                        With a passionate focus on cybersecurity and hands-on
+                        experience through various security projects and
+                        internships...<br><br>
+                        🎯 <strong>Key Achievements:</strong><br>
+                        - Successfully conducted security assessments on major
+                        platforms like Netflix and TripAdvisor...<br>
+                        - Completed cybersecurity simulations with Mastercard,
+                        Goldman Sachs, and Tata.<br><br>
+                        💡 <strong>Core Competencies:</strong><br>
+                        - Vulnerability Assessment & Penetration Testing<br>
+                        - IAM Design & Evaluation<br>
+                        - Tools: Nmap, Metasploit, Legion, Nexpose<br>
+                        - Languages: Python, Bash, JavaScript, SQL<br><br>
+                        Open to collaborations, mentorship, and cybersecurity
+                        challenges!
+                    </p>
+
+                </div>
+
+                <div class="social-links">
+                    <a href="https://discord.com/users/harsh_7singh"
+                        class="social-link discord" target="_blank">
+                        <i class="fab fa-discord"></i>
+                        Discord
+                    </a>
+
+                    <a href="https://tryhackme.com/p/ViperX"
+                        class="social-link tryhackme" target="_blank">
+                        <i class="fas fa-shield-alt"></i>
+                        TryHackMe
+                    </a>
+
+                    <a href="https://medium.com/@ViperrX"
+                        class="social-link medium" target="_blank">
+                        <i class="fab fa-medium"></i>
+                        Medium
+                    </a>
+
+                    <a href="https://instagram.com/harsh__singh77"
+                        class="social-link instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        Instagram
+                    </a>
+
+                    <a href="https://x.com/harsh_7rajput"
+                        class="social-link twitter" target="_blank">
+                        <i class="fab fa-x-twitter"></i>
+                        X
+                    </a>
+
+                    <a
+                        href="http://www.linkedin.com/in/harsh-vardhan-singh-22dc12"
+                        class="social-link linkedin" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+
+                    <a href="https://github.com/Harshsingh0099"
+                        class="social-link github" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        // Add click handlers to make links editable
+        document.querySelectorAll('.social-link').forEach(link => {
+            // Right-click to edit URL (prevent normal context menu)
+            link.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                const platform = this.textContent.trim();
+                const newUrl = prompt(`Enter your ${platform} URL:`, this.href);
+                if (newUrl && newUrl !== this.href) {
+                    this.href = newUrl;
+                }
+            });
+            
+            // Add tooltip for editing
+            link.title = 'Right-click to edit URL';
+        });
+
+        // Make profile content editable
+        document.querySelector('.name').addEventListener('click', function() {
+            const newName = prompt('Enter your name:', this.textContent);
+            if (newName) this.textContent = newName;
+        });
+
+        document.querySelector('.title').addEventListener('click', function() {
+            const newTitle = prompt('Enter your title/role:', this.textContent);
+            if (newTitle) this.textContent = newTitle;
+        });
+
+        document.querySelector('.bio').addEventListener('click', function() {
+            const newBio = prompt('Enter your bio:', this.textContent);
+            if (newBio) this.textContent = newBio;
+        });
+
+        // Add smooth scroll animation on load
+        window.addEventListener('load', function() {
+            document.querySelector('.portfolio-card').style.opacity = '0';
+            document.querySelector('.portfolio-card').style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                document.querySelector('.portfolio-card').style.transition = 'all 0.8s ease-out';
+                document.querySelector('.portfolio-card').style.opacity = '1';
+                document.querySelector('.portfolio-card').style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+    </body>
+</html>
